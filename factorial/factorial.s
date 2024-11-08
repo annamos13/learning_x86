@@ -2,9 +2,9 @@
 .globl factorial
 .type factorial, @function 
 factorial:
-  pushl %ebp            # standard function stuff - we have to restore %ebp to its prior state before returning, so we have to push it 
-  movl %esp, %ebp       # This is because we don't want to modify the stack pointer so we use %ebp. This creates the stack frame for this function.
-                        # The two lines above will be the way you always create a function.
+  pushl %ebp            
+  movl %esp, %ebp     
+    
   movl 8(%ebp), %eax    # This moves the first argument to %eax.
                         # %ebp holds old %ebp, 4(%ebp) holds the return address, 8(%ebp) holds the first param.
   cmpl $1, %eax         # If the number is 1, this is our base case, we simply return (1 is already in %eax as the return value)
